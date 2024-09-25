@@ -1,10 +1,19 @@
+// App.js
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import EmojiSelector from './components/EmojiSelector';
+import Header from './components/Header';
 
 export default function App() {
+  const handleEmojiSelect = (emoji) => {
+    console.log(`Selected Mood: ${emoji}`);
+  };
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Header />
+      <Text>Rate your mood today by selecting an emoji!</Text>
+      <EmojiSelector onSelect={handleEmojiSelect} />
       <StatusBar style="auto" />
     </View>
   );
@@ -18,3 +27,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+
